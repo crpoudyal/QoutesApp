@@ -15,39 +15,41 @@ class _QuoteState extends State<Quote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrangeAccent,
-      body: Center(
-        child: Container(
-          height: 200,
-          width: 400,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.white,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                quote[index % quote.length],
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
+      backgroundColor: Colors.blue[100],
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/dblquote.png",
+              height: 40,
+              width: 40,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              quote[index % quote.length],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
               ),
-              SizedBox(
-                height: 40,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: Colors.blue,
               ),
-              TextButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                  backgroundColor: Colors.blue,
-                ),
-                onPressed: showQuotes,
-                child: Text("Next"),
-              ),
-            ],
-          ),
+              onPressed: showQuotes,
+              child: Text("Next"),
+            ),
+          ],
         ),
       ),
     );
